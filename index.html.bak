@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+			body{
+					margin:0;
+					background-image:url(images/page-bg.jpg);
+				}
+  	.player{
+				/* position:relative; */
+			/* 	display:grid; */
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				width:653px;
+				height:653px;
+				position:absolute;
+				top:0;
+				left:0;
+				bottom:0;
+				right:0;
+				margin:auto;
+				background-image:url(images/bg_circle.png),url(images/bg_center.png);
+				background-repeat:no-repeat;
+				background-position:center;
+		
+			}
+			.btn{
+					/* position:absolute;
+					top:0;
+					left:0;
+					right:0;
+					bottom:0; */
+					/* top:50%;
+					left:50%;
+					margin-left:-47.5px;
+					margin-top:-47px; */
+			/* 		margin:auto; */
+					width:95px;
+					height:94px;									
+					background-image:url(images/btn-bg.png);
+					display:flex;
+					justify-content:center;
+					align-items:center;
+				}
+			.btn-play{
+							width:32px;
+							height:36px;
+							background-image:url(images/pause.png);
+							
+						}
+  </style>
+ </head>
+ <body>
+	<div class="player">
+		<div class="btn">
+			<div class="btn-play">
+				<div class="audio">
+				<audio src="audios/music.mp3"></audio>				
+				</div>
+			<div>
+			
+		</div>
+	</div>
+	<script>
+			
+		var oBtn = document.getElementsByClassName("btn-play")[0];
+		var oAudio = document.getElementsByClassName("audio")[0];
+			oBtn.onclick = function(){
+							if(oAudio.paused){
+								oAudio.play();
+								oBtn.style.backgroundImage = "url(images/play.png)";
+							}else{
+									oAudio.pause();
+									oBtn.style.backgroundImage = "url(images/pause.png)";
+								}
+						}
+	</script>
+ </body>
+</html>

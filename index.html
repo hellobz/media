@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>桔子音乐</title>
+  <link rel="icon" href="./images/logo.png">
+  	<style>
+			body{
+					margin:0;
+					background-image:url(images/page-bg.jpg)
+				}
+		.player{
+					width:653px;
+					height:653px;
+					margin:50px auto;
+					background-image:url(images/bg_circle.png),url(images/bg_center.png);
+
+				}
+				.player,.btn .btn-play{
+										background-repeat:no-repeat;
+										background-position:center;
+								}
+				
+				.btn{	
+						width:95px;
+						height:94px;					
+						background-image:url(images/btn-bg.png);	
+						transform:translate(275px,275px);
+					}
+					.btn-play{
+								width:32px;
+								height:36px;
+								background-image:url(images/pause.png);
+								transform:translateX(32.5px) translateY(25.7px);
+							}
+	</style>
+ </head>
+ <body>
+	<div class="player">
+		<div class="btn">
+			<div class="btn-play">
+				<audio class="audio" src="audios/music.mp3"></audio>
+			</div>
+		</div>
+	</div>
+	<script>
+		var oBtn = document.getElementsByClassName("btn-play")[0];
+		var oAudio = document.getElementsByClassName("audio")[0];
+			oBtn.onclick = function(){
+									if(oAudio.paused){
+												oAudio.play();
+												oBtn.style.backgroundImage = "url(images/play.png)";
+											}else{
+												oAudio.pause();
+												oBtn.style.backgroundImage = "url(images/pause.png)";
+											}
+								}
+	</script>
+ </body>
+</html>
